@@ -1,0 +1,19 @@
+/* transiciones para que el contenido se desvanezca a negro */
+.fade-enter {
+    opacity: 0;
+    background-color: black; /* Fondo negro */
+  }
+  .fade-enter-active {
+    opacity: 1;
+    background-color: transparent;
+    transition: opacity 1500ms ease-in, background-color 1500ms ease-in;
+  }
+  .fade-exit {
+    opacity: 1;
+    background-color: transparent;
+  }
+  .fade-exit-active {
+    opacity: 0;
+    background-color: black; /* Fondo negro durante la salida */
+    transition: opacity 1500ms ease-out, background-color 1500ms ease-out;
+  }
