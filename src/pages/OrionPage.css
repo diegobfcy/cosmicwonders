@@ -233,11 +233,6 @@
     opacity: 30%;
   }
 
-
-  
-  
-
-
   .planet-button button {
     border: 2px solid white;
     background-color: transparent;
@@ -246,6 +241,7 @@
     cursor: pointer;
     font-family: 'Michroma', sans-serif; /* Aplicar Michroma también al texto del botón */
     transition: background-color 0.3s, color 0.3s;
+
   }
   
   .planet-button button:hover {

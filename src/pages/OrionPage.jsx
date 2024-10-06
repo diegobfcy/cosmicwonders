@@ -20,6 +20,7 @@ import FondoPlaneta2 from "./../assets/FondoPlaneta2.webp";
 import FondoPlaneta3 from "./../assets/FondoPlaneta3.webp";
 import FondoPlaneta4 from "./../assets/FondoPlaneta4.webp";
 
+
 const ShipModel = ({ modelPath, scale }) => {
   const { scene } = useGLTF(modelPath);
   const ref = useRef();
@@ -125,9 +126,13 @@ const OrionPage = () => {
                     className={`ship-button ${
                       selectedShip === "Alcubierre" ? "selected" : ""
                     } ${
-                      selectedShip && selectedShip !== "Alcubierre" ? "disabled" : ""
+                      selectedShip && selectedShip !== "Alcubierre"
+                        ? "disabled"
+                        : ""
                     }`}
-                    onClick={() => handleShipSelect("Alcubierre")}
+                    onClick={() => handleShipSelect("Alcubierre")} style={{
+                      fontFamily: "Michroma, sans-serif",
+                    }}
                   >
                     <div className="checkbox">
                       {selectedShip === "Alcubierre" && <span>&#10003;</span>}
@@ -148,6 +153,8 @@ const OrionPage = () => {
                       onClick={(e) => {
                         e.stopPropagation();
                         handleLearnMore(AlcubierreImage);
+                      }} style={{
+                        fontFamily: "Michroma, sans-serif",
                       }}
                     >
                       Learn More
@@ -157,9 +164,13 @@ const OrionPage = () => {
                     className={`ship-button ${
                       selectedShip === "Chung-Freese" ? "selected" : ""
                     } ${
-                      selectedShip && selectedShip !== "Chung-Freese" ? "disabled" : ""
+                      selectedShip && selectedShip !== "Chung-Freese"
+                        ? "disabled"
+                        : ""
                     }`}
-                    onClick={() => handleShipSelect("Chung-Freese")}
+                    onClick={() => handleShipSelect("Chung-Freese")}style={{
+                      fontFamily: "Michroma, sans-serif",
+                    }}
                   >
                     <div className="checkbox">
                       {selectedShip === "Chung-Freese" && <span>&#10003;</span>}
@@ -168,7 +179,7 @@ const OrionPage = () => {
                     <Canvas className="model-canvas">
                       <ambientLight intensity={0.5} />
                       <pointLight position={[10, 10, 10]} />
-                      <ShipModel modelPath={ChungFreeseModel} scale={0.009} />
+                      <ShipModel modelPath={ChungFreeseModel} scale={0.01} />
                       <OrbitControls enableZoom={false} />
                     </Canvas>
                     <p>
@@ -180,6 +191,8 @@ const OrionPage = () => {
                       onClick={(e) => {
                         e.stopPropagation();
                         handleLearnMore(ChungFreeseImage);
+                      }}style={{
+                        fontFamily: "Michroma, sans-serif",
                       }}
                     >
                       Learn More
@@ -189,21 +202,27 @@ const OrionPage = () => {
                     className={`ship-button ${
                       selectedShip === "Solitones" ? "selected" : ""
                     } ${
-                      selectedShip && selectedShip !== "Solitones" ? "disabled" : ""
+                      selectedShip && selectedShip !== "Solitones"
+                        ? "disabled"
+                        : ""
                     }`}
                     onClick={() => handleShipSelect("Solitones")}
                   >
                     <div className="checkbox">
                       {selectedShip === "Solitones" && <span>&#10003;</span>}
                     </div>
-                    <h2>Lentzium</h2>
+                    <h2 style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>Lentzium</h2>
                     <Canvas className="model-canvas">
                       <ambientLight intensity={0.5} />
                       <pointLight position={[10, 10, 10]} />
                       <ShipModel modelPath={SolitonesModel} scale={0.015} />
                       <OrbitControls enableZoom={false} />
                     </Canvas>
-                    <p>
+                    <p style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>
                       A concept utilizing soliton waves for propulsion across
                       interstellar distances.
                     </p>
@@ -212,6 +231,8 @@ const OrionPage = () => {
                       onClick={(e) => {
                         e.stopPropagation();
                         handleLearnMore(SolitonesImage);
+                      }} style={{
+                        fontFamily: "Michroma, sans-serif",
                       }}
                     >
                       Learn More
@@ -237,44 +258,109 @@ const OrionPage = () => {
                   <OrbitControls enableZoom={false} />
                 </Canvas>
                 <div className="title-container">
-                  <h1>
+                  <h1 style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>
                     Choose the first type of exoplanet you want to explore
                   </h1>
-                  <p>
+                  <p style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>
                     Explore various planetary types that might harbor conditions
                     for life beyond Earth.
                   </p>
                 </div>
                 <div className="buttons-container">
-                  <button className="planet-button"style={{ backgroundImage: `url(${FondoPlaneta1})` }}>
-                    <div className="overlay" >
-                      <h1>Gas giant</h1>
-                      <p>Explore unique features of this planet type.</p>
-                      <button>Explore</button>
+                  <button
+                    className="planet-button"
+                    style={{ backgroundImage: `url(${FondoPlaneta1})` }}
+                  >
+                    <div className="overlay">
+                      <h1 style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>Gas giant</h1>
+                      <p style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>
+                        These exoplanets are huge and made mostly of gases like
+                        hydrogen and helium, just like Jupiter and Saturn in our
+                        solar system. They don't have a solid surface, so you
+                        couldn't stand on them. They are often found very close
+                        to their stars or very far away.
+                      </p >
+                      <button style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>Explore</button>
                     </div>
                   </button>
-                  <button className="planet-button" style={{ backgroundImage: `url(${FondoPlaneta2})` }}>
-
+                  <button
+                    className="planet-button"
+                    style={{ backgroundImage: `url(${FondoPlaneta2})` }}
+                  >
                     <div className="overlay">
-                      <h1>Neptunian</h1>
-                      <p>Explore unique features of this planet type.</p>
-                      <button>Explore</button>
+                      <h1 style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>Neptunian</h1>
+                      <p style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>
+                        These exoplanets are similar to Neptune. They're smaller
+                        than gas giants but larger than Earth. They have thick
+                        atmospheres made of hydrogen, helium, and water, along
+                        with other gases. They can be quite hot depending on how
+                        close they are to their star.
+                      </p>
+                      <button style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>Explore</button>
                     </div>
                   </button>
-                  <button className="planet-button" style={{ backgroundImage: `url(${FondoPlaneta3})` }}>
-
+                  <button
+                    className="planet-button"
+                    style={{ backgroundImage: `url(${FondoPlaneta3})` }}
+                  >
                     <div className="overlay">
-                      <h1>Super-Earth</h1>
-                      <p>Explore unique features of this planet type.</p>
-                      <button>Explore</button>
+                      <h1 style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>Super-Earth</h1>
+                      <p style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>
+                        Super-Earths are rocky planets like Earth, but they are
+                        bigger. They can be up to 10 times more massive than
+                        Earth. Some might have thick atmospheres, oceans, or
+                        even conditions suitable for life, but others might be
+                        dry and barren.
+                      </p>
+                      <button style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>Explore</button>
                     </div>
                   </button>
-                  <button className="planet-button" style={{ backgroundImage: `url(${FondoPlaneta4})` }}>
-
+                  <button
+                    className="planet-button"
+                    style={{ backgroundImage: `url(${FondoPlaneta4})` }}
+                  >
                     <div className="overlay">
-                      <h1>Terrestrial</h1>
-                      <p>Explore unique features of this planet type.</p>
-                      <button>Explore</button>
+                      <h1
+                        style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}
+                      >
+                        Terrestrial
+                      </h1>
+                      <p                         style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }}>
+                        These are rocky exoplanets similar to Earth or Mars.
+                        They are smaller and have solid surfaces you could
+                        potentially walk on. Terrestrial exoplanets might have
+                        atmospheres and possibly water, which are important for
+                        life as we know it.
+                      </p>
+                      <button                         style={{
+                          fontFamily: "Michroma, sans-serif",
+                        }} >Explore</button>
                     </div>
                   </button>
                 </div>
@@ -310,7 +396,9 @@ const OrionPage = () => {
           </div>
         </div>
       )}
+      
     </div>
+    
   );
 };
 
