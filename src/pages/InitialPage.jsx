@@ -4,6 +4,7 @@ import { OrbitControls } from '@react-three/drei';
 import LogoLetras from "./../assets/LogoLetras.png";
 import './transitionStyles.css';
 import { useNavigate } from 'react-router-dom';
+import { useProgress } from '../context/ProgressProvider';
 
 
 function Stars() {
@@ -57,10 +58,12 @@ function Stars() {
 }
 
 function InitialPage() {
+  const { advanceProgress } = useProgress();
     const navigate = useNavigate(); // Now it should work without error
   
     const handleStartClick = () => {
-      navigate('/scenes'); // Navigate to the scenes page
+      advanceProgress(); // Navigate to the scenes page
+      navigate("/scenes");
     };
   
     return (

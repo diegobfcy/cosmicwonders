@@ -9,6 +9,7 @@ import Scene1 from './../assets/escena1.png';
 import Scene2 from './../assets/escena2.png';
 import Scene3 from './../assets/escena3.png';
 import Scene4 from './../assets/escena4.png';
+import { useProgress } from '../context/ProgressProvider';
 
 const scenes = [Scene1, Scene2, Scene3, Scene4];
 const texts = [
@@ -19,6 +20,7 @@ const texts = [
 ];
 
 function InitialScenesPage() {
+  const { advanceProgress } = useProgress();
   const [currentScene, setCurrentScene] = useState(0);
   const [inProp, setInProp] = useState(true);
   const navigate = useNavigate(); // Instancia de useNavigate
@@ -38,7 +40,8 @@ function InitialScenesPage() {
 
     setTimeout(() => {
       if (currentScene === scenes.length - 1) {
-        navigate('/orion'); // Redirecciona a la ruta '/orion'
+        advanceProgress(); 
+        navigate("/orion");
       } else {
         const newSceneIndex = (currentScene + 1) % scenes.length;
         setCurrentScene(newSceneIndex);

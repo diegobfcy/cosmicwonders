@@ -371,7 +371,7 @@ const OrionPage = () => {
       </TransitionGroup>
 
       <div
-        className="next-button"
+        className="next-button-orion"
         onClick={handleNext}
         style={{
           opacity: part === 2 && !selectedShip ? 0.5 : 1,
